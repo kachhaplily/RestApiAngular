@@ -1,0 +1,28 @@
+<div class="container">
+  <form [formGroup]="myloginform" (ngSubmit)="onLogin()">
+      <!-- emailid  -->
+      <mat-form-field appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="email" type="email" required>
+          <mat-error
+            *ngIf="myloginform.controls['email'].invalid && (myloginform.controls['email'].errors||myloginform.controls['email'].touched)">
+            <span *ngIf="myloginform.controls['email'].errors?.['required']">Email is required.</span>
+            <span *ngIf="myloginform.controls['email'].errors?.['email']">Please enter a valid email address.</span>
+          </mat-error>
+        </mat-form-field>
+        <!-- password  -->
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" required>
+          <mat-error
+            *ngIf="myloginform.controls['password'].invalid && (myloginform.controls['password'].errors || myloginform.controls['password'].touched)">
+            <span *ngIf="myloginform.controls['password'].errors?.['required']">Password Required</span>
+            <span *ngIf="myloginform.controls['password'].errors?.['pattern']">
+              Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special
+              character.
+            </span>
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </form>
+</div>

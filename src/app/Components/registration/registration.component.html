@@ -1,1 +1,72 @@
-<p>registration works!</p>
+<div class="container">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <!-- title  -->
+    <mat-form-field appearance="outline">
+      <mat-label>Select an option</mat-label>
+      <mat-select formControlName="title" required>
+        <mat-option value="Mr">Mr</mat-option>
+        <mat-option value="Mrs">Mrs</mat-option>
+        <mat-option value="Miss">Miss</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <!-- firstname -->
+    <mat-form-field appearance="outline">
+      <mat-label>FirstName</mat-label>
+      <input matInput formControlName="firstName" required>
+      <mat-error
+        *ngIf="myForm.controls['firstName'].invalid && (myForm.controls['firstName'].errors||myForm.controls['firstName'].touched)">
+        <span *ngIf="myForm.controls['firstName'].errors?.['required']">UserName Required</span>
+        <span *ngIf="myForm.controls['firstName'].errors?.['firstName']">Invalid Name</span>
+      </mat-error>
+    </mat-form-field>
+    <!-- lasttname -->
+    <mat-form-field appearance="outline">
+      <mat-label>LastName</mat-label>
+      <input matInput formControlName="lastName" required>
+      <mat-error
+        *ngIf="myForm.controls['lastName'].invalid && (myForm.controls['lastName'].errors||myForm.controls['lastName'].touched)">
+        <span *ngIf="myForm.controls['lastName'].errors?.['required']">UserName Required</span>
+        <span *ngIf="myForm.controls['lastName'].errors?.['lastName']">Invalid Name</span>
+      </mat-error>
+    </mat-form-field>
+    <!-- email  -->
+    <mat-form-field appearance="outline">
+      <mat-label>Email Address</mat-label>
+      <input matInput formControlName="email" type="email" required>
+      <mat-error
+        *ngIf="myForm.controls['email'].invalid && (myForm.controls['email'].errors||myForm.controls['email'].touched)">
+        <span *ngIf="myForm.controls['email'].errors?.['required']">Email is required.</span>
+        <span *ngIf="myForm.controls['email'].errors?.['email']">Please enter a valid email address.</span>
+      </mat-error>
+    </mat-form-field>
+    <!-- password  -->
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" required>
+      <mat-error
+        *ngIf="myForm.controls['password'].invalid && (myForm.controls['password'].errors || myForm.controls['password'].touched)">
+        <span *ngIf="myForm.controls['password'].errors?.['required']">Password Required</span>
+        <span *ngIf="myForm.controls['password'].errors?.['pattern']">
+          Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special
+          character.
+        </span>
+      </mat-error>
+    </mat-form-field>
+    <!-- confirm password  -->
+    <mat-form-field appearance="outline">
+      <mat-label>confirm Password</mat-label>
+      <input matInput formControlName="confirmPassword" type="confirmPassword" required>
+      <mat-error
+        *ngIf="myForm.controls['confirmPassword'].invalid && (myForm.controls['confirmPassword'].errors || myForm.controls['confirmPassword'].touched)">
+        <span *ngIf="myForm.controls['confirmPassword'].errors?.['required']">Password Required</span>
+        <span *ngIf="myForm.controls['confirmPassword'].errors?.['pattern']">
+          Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special
+          character.
+        </span>
+      </mat-error>
+    </mat-form-field>
+    <!-- accept term -->
+    <mat-checkbox formControlName="acceptTerms">Check me!</mat-checkbox>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</div>

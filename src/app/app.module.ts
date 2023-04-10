@@ -13,11 +13,20 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterModule, Routes } from '@angular/router';
-
+import { LoginComponent } from './Components/login/login.component';
+import { AccountComponent } from './Components/account/account.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TabelCloumnComponent } from './Components/tabel-cloumn/tabel-cloumn.component';
+import { TabelRowComponent } from './Components/tabel-row/tabel-row.component';
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LoginComponent,
+    AccountComponent,
+    TabelCloumnComponent,
+    TabelRowComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +43,8 @@ import { RouterModule, Routes } from '@angular/router';
     MatCheckboxModule,
     MatFormFieldModule,
     RouterModule,
+    MatProgressSpinnerModule,
+    MatTableModule
   ],
   exports:[  MatInputModule,
     MatButtonModule,
@@ -43,7 +54,9 @@ import { RouterModule, Routes } from '@angular/router';
     MatSelectModule,
     MatCheckboxModule,
     MatFormFieldModule,
-    RouterModule,],
+    RouterModule,
+    MatProgressSpinnerModule,MatTableModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

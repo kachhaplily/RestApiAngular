@@ -1,0 +1,17 @@
+<div *ngIf="accountdata.length==0; else data" >
+
+  <mat-progress-spinner
+      color="primary"
+      mode="indeterminate"
+      strokeWidth="4"
+      diameter="40">
+    </mat-progress-spinner>
+
+</div>
+<ng-template #data>
+  <table mat-table  class="mat-elevation-z8">
+    <app-tabel-cloumn/>
+    <app-tabel-row  [tabelrow]="accountdata"/>
+
+  </table>
+  </ng-template>
