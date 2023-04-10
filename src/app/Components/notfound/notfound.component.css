@@ -1,0 +1,16 @@
+.container{
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-self:center;
+  text-align: center;
+}
+.container img{
+  max-width: 100%;
+}
+.route{
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 4px;
+}

@@ -14,11 +14,17 @@ export class AuthServiceService {
   }
   logout(){
     localStorage.removeItem("token")
+    this.router.navigate([""])
   }
   login(value:any,apitext:any):Observable <any>{
     this.apiservice.postData(value,apitext).subscribe((r)=>{
       localStorage.setItem("token",r.jwtToken)
+      this.router.navigate(["account"])
       console.log(r)})
     return of ("login succed")
+  }
+  isLogin(): boolean {
+    const token = localStorage.getItem("token");
+    return !!token; // Returns true if token is present, false otherwise
   }
 }

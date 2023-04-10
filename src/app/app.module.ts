@@ -16,17 +16,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Components/login/login.component';
 import { AccountComponent } from './Components/account/account.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { TabelCloumnComponent } from './Components/tabel-cloumn/tabel-cloumn.component';
-import { TabelRowComponent } from './Components/tabel-row/tabel-row.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NotfoundComponent } from './Components/notfound/notfound.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
     AccountComponent,
-    TabelCloumnComponent,
-    TabelRowComponent
+    NotfoundComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,8 @@ import { MatTableModule } from '@angular/material/table';
     MatFormFieldModule,
     RouterModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatToolbarModule
   ],
   exports:[  MatInputModule,
     MatButtonModule,

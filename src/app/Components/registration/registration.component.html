@@ -1,3 +1,5 @@
+<div class="container"><h1 class="mat-h1">Registration</h1></div>
+
 <div class="container">
   <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <!-- title  -->
@@ -9,26 +11,29 @@
         <mat-option value="Miss">Miss</mat-option>
       </mat-select>
     </mat-form-field>
-    <!-- firstname -->
-    <mat-form-field appearance="outline">
-      <mat-label>FirstName</mat-label>
-      <input matInput formControlName="firstName" required>
-      <mat-error
-        *ngIf="myForm.controls['firstName'].invalid && (myForm.controls['firstName'].errors||myForm.controls['firstName'].touched)">
-        <span *ngIf="myForm.controls['firstName'].errors?.['required']">UserName Required</span>
-        <span *ngIf="myForm.controls['firstName'].errors?.['firstName']">Invalid Name</span>
-      </mat-error>
-    </mat-form-field>
-    <!-- lasttname -->
-    <mat-form-field appearance="outline">
-      <mat-label>LastName</mat-label>
-      <input matInput formControlName="lastName" required>
-      <mat-error
-        *ngIf="myForm.controls['lastName'].invalid && (myForm.controls['lastName'].errors||myForm.controls['lastName'].touched)">
-        <span *ngIf="myForm.controls['lastName'].errors?.['required']">UserName Required</span>
-        <span *ngIf="myForm.controls['lastName'].errors?.['lastName']">Invalid Name</span>
-      </mat-error>
-    </mat-form-field>
+    <div class="margeclass">
+ <!-- firstname -->
+ <mat-form-field appearance="outline">
+  <mat-label>FirstName</mat-label>
+  <input matInput formControlName="firstName" required>
+  <mat-error
+    *ngIf="myForm.controls['firstName'].invalid && (myForm.controls['firstName'].errors||myForm.controls['firstName'].touched)">
+    <span *ngIf="myForm.controls['firstName'].errors?.['required']">UserName Required</span>
+    <span *ngIf="myForm.controls['firstName'].errors?.['firstName']">Invalid Name</span>
+  </mat-error>
+</mat-form-field>
+<!-- lasttname -->
+<mat-form-field appearance="outline">
+  <mat-label>LastName</mat-label>
+  <input matInput formControlName="lastName" required>
+  <mat-error
+    *ngIf="myForm.controls['lastName'].invalid && (myForm.controls['lastName'].errors||myForm.controls['lastName'].touched)">
+    <span *ngIf="myForm.controls['lastName'].errors?.['required']">UserName Required</span>
+    <span *ngIf="myForm.controls['lastName'].errors?.['lastName']">Invalid Name</span>
+  </mat-error>
+</mat-form-field>
+    </div>
+
     <!-- email  -->
     <mat-form-field appearance="outline">
       <mat-label>Email Address</mat-label>
@@ -67,6 +72,9 @@
     </mat-form-field>
     <!-- accept term -->
     <mat-checkbox formControlName="acceptTerms">Check me!</mat-checkbox>
+    <div class="margeclass">
     <button mat-raised-button color="primary" type="submit">Submit</button>
+    <button mat-raised-button color="basic" (click)="login()">signIn</button>
+    </div>
   </form>
 </div>

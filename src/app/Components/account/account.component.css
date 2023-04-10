@@ -1,0 +1,23 @@
+.container{
+  max-width: 1200px;
+  margin: auto;
+}
+ table{
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid gray;
+  padding: 5px;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {background-color: #c7fffc;}
+.spiner{
+  display: flex;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin: 2px;
+}

@@ -1,4 +1,6 @@
+
 <div class="container">
+  <div class="title"> login<mat-icon>account_circle</mat-icon></div>
   <form [formGroup]="myloginform" (ngSubmit)="onLogin()">
       <!-- emailid  -->
       <mat-form-field appearance="outline">
@@ -24,5 +26,6 @@
           </mat-error>
         </mat-form-field>
         <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-raised-button color="basic" (click)="reglink()">Create Account</button>
       </form>
 </div>

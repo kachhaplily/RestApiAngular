@@ -1,3 +1,32 @@
-<a routerLink="">Reg</a>
-<a routerLink="login">Login</a>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon routerLink="">menu</mat-icon>
+    </button>
+    <span>ResApi[Get,Post]</span>
+    <span class="spacer"></span>
+    <ng-container *ngIf="isUserLoggedIn()">
+      <button (click)="logout()" mat-icon-button>
+        <mat-icon>logout</mat-icon>
+      </button>
+    </ng-container>
+    <ng-container *ngIf="!isUserLoggedIn()">
+      <button routerLink="login" mat-icon-button>
+        <!-- <mat-icon>login</mat-icon> -->
+      </button>
+    </ng-container>
+
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+
+
+
+
+
+
 <router-outlet></router-outlet>

@@ -14,6 +14,8 @@ export class AccountComponent {
       this.accountdata = data;
       console.log(this.accountdata);
     });
+
   }
+
 
 }

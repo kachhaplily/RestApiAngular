@@ -29,5 +29,8 @@ export class LoginComponent {
       console.log("error")
     }
   }
+  reglink(){
+    this.router.navigate(["reg"])
+  }
 
 }

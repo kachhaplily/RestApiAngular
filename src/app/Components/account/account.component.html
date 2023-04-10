@@ -1,17 +1,27 @@
-<div *ngIf="accountdata.length==0; else data" >
+<div *ngIf="accountdata.length==0; else data">
 
-  <mat-progress-spinner
-      color="primary"
-      mode="indeterminate"
-      strokeWidth="4"
-      diameter="40">
-    </mat-progress-spinner>
+  <div class="spiner">
+    <mat-progress-spinner color="Accent " mode="indeterminate" strokeWidth="2" diameter="20"></mat-progress-spinner>
+    <mat-progress-spinner color="primary" mode="indeterminate" strokeWidth="2" diameter="20"></mat-progress-spinner>
+    <mat-progress-spinner color="warn" mode="indeterminate" strokeWidth="2" diameter="20"></mat-progress-spinner>
+  </div>
+
 
 </div>
 <ng-template #data>
-  <table mat-table  class="mat-elevation-z8">
-    <app-tabel-cloumn/>
-    <app-tabel-row  [tabelrow]="accountdata"/>
+  <div class="container">
+    <table>
+      <thead>
+        <th *ngFor="let key of accountdata[0] |keyvalue">{{key.key}}</th>
 
-  </table>
-  </ng-template>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of accountdata">
+          <td *ngFor="let itemdata of item |keyvalue ">{{itemdata.value}}</td>
+
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</ng-template>
